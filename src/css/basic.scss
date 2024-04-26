@@ -1,0 +1,84 @@
+:root {
+  --light-blue-100: #bcf3ff;
+  --blue-100: #2d739e;
+  --blue-200: #60acd8;
+  --blue-300: #2f7fac;
+  --blue-400: #215777;
+  --blue-500: #154765;
+}
+
+
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+#root {
+  font-family: "Helvetica", Helvetica, "Helvetica Neue",  Arial, sans-serif;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+button {
+  border: none;
+}
+
+body,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+span,
+input,
+select,
+textarea,
+button,
+ol,
+ul,
+li {
+  font-family: "Helvetica", Helvetica, "Helvetica Neue",  Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+p,
+label,
+input,
+select,
+textarea,
+button,
+ol,
+ul,
+li {
+  font-size: 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'couturebold';
+  src: url('fonts/couture-webfont.eot');
+  src: url('fonts/outure-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/couture-webfont.woff') format('woff'),
+       url('fonts/couture-webfont.ttf') format('truetype'),
+       url('fonts/couture-webfont.svg#couturebold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  background: linear-gradient(to bottom,  var(--blue-200) 0%, var(--blue-100) 98%);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  align-items: center;
+  }
+
+  .header_logo_container {
+    color: var(--light-blue-100);
+    text-shadow: -1px 1px var(--blue-100);
+    font-family: "Century Gothic", Century Gothic,  "couturebold", Helvetica;
+    cursor: pointer;
+    &:hover{
+      color: white;
+    }
+    }
+  .logo-part-1{
+    font-size: 32px;
+    font-family: "Century Gothic", Century Gothic,  "couturebold", Helvetica;
+    }
+  .logo-part-2 {
+    font-size: 32px;
+    font-family: "Century Gothic", Century Gothic,  "couturebold", Helvetica;
+    }
+  
+
+    .header_buttons_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+    }
+    .header_button {
+      background-color: var(--blue-400);
+      color: #ffffff;
+      font-size:  12px;
+      letter-spacing: 1px;
+      padding: 1em 2em;
+      border-radius: 6px;
+      &:hover {
+        background-color: var(--blue-500);
+      }
+    }
