@@ -11,12 +11,13 @@
   },
   "dependencies": {
     "@firebase/storage": "^0.12.2",
+    "@tanstack/react-query": "^5.21.7",
     "express": "^4.18.2",
+    "filesize": "^10.1.1",
     "firebase": "^10.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1",
-    "@tanstack/react-query": "^5.21.7"
+    "react-router-dom": "^6.21.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -27,8 +28,8 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "typescript": "^5.2.2",
     "sass": "^1.69.7",
+    "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
 }

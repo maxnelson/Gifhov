@@ -1,7 +1,7 @@
 .upload_container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   gap: 1rem;
   margin: 5rem;
 
@@ -13,30 +13,36 @@
     height: 16rem;
     border: 1px dashed var(--gray-300);
     cursor: pointer;
+    color: var(--gray-400);
     &:hover {
       background-color: var(--gray-100);
-      outline: 0;
-    }
-    p {
-      font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-      color: var(--gray-400)
     }
   }
   .fileUploadInputDiv_draggedOverValid {
-    border: 1px solid var(--green-100);
-    background-color: #ddd;
+    border: 2px dashed var(--green-100);
+    &:focus {
+      background-color: #ddd;
+    }
   }
   .fileUploadInputDiv_draggedOverInvalid {
-    border: 1px solid var(--red-100);
-    background-color: #ddd;
+    border: 2px dashed var(--red-100);
+    &:focus {
+      background-color: #ddd;
+    }
   }
 }
 
 span.equationText {
-  color: var(--gray-400)
+  color: var(--gray-400);
+  align-self: center;
 }
 audio {
   display: none;
 }
 
-
+.invalidFileLi {
+  color: var(--red-100);
+}
+.validFileLi {
+  color: var(--green-100);
+}
