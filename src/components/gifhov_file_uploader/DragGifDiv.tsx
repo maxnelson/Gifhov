@@ -57,8 +57,6 @@ export function DragGifDiv(props) {
       props.setGifFileUpload(droppedFile);
     }
     if (props.gifFileUpload?.size > 0) {
-      console.log("dual file upload");
-      debugger;
       uploadGifhov("anonymousGuest", droppedFile, props.audioFileUpload);
     }
   };

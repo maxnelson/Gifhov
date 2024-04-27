@@ -46,3 +46,21 @@ audio {
 .validFileLi {
   color: var(--green-100);
 }
+
+.gifhov_page_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.gifhov_metadata_container {
+  display: flex;
+  justify-content: center;
+}
+.display-flex {
+  display: flex;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
