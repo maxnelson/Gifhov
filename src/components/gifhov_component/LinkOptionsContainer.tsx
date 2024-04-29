@@ -1,6 +1,4 @@
-import { useState, useRef } from "react";
-
-export function LinkOptionsContainer(props) {
+export function LinkOptionsContainer() {
   return (
     <>
       <div className="link_options_container">

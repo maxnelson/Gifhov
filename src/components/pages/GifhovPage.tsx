@@ -6,14 +6,24 @@ import { fetchGifhov } from "@/utility_functions/database_operations/gifhovs/fet
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+interface GifHovObjectType {
+  gifURL: string;
+  audioURL: string;
+}
+
 export function GifhovPage() {
-  const { ownerID, gifhovID } = useParams();
-  const [gifHovObject, setGifHovObject] = useState(null);
+  const { ownerID, gifhovID } = useParams<{
+    ownerID: string;
+    gifhovID: string;
+  }>();
+  const [gifHovObject, setGifHovObject] = useState<
+    GifHovObjectType | undefined
+  >(undefined);
 
   useEffect(() => {
     const fetchGifhovObject = async () => {
-      const gifhovObject = await fetchGifhov(ownerID, gifhovID);
-      setGifHovObject(gifhovObject);
+      const gifhovObject = await fetchGifhov(ownerID ?? "", gifhovID ?? "");
+      setGifHovObject(gifhovObject as GifHovObjectType);
     };
     fetchGifhovObject();
   }, []);

@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
 import { LinkOptionsContainer } from "@/components/gifhov_component/LinkOptionsContainer";
-export function GifhovMetadata(props) {
+
+export function GifhovMetadata() {
   return (
     <>
       <div className="">

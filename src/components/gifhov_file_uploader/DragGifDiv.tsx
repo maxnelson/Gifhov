@@ -7,7 +7,6 @@ export function DragGifDiv(props) {
   const [validationErrorFileType, setValidationErrorFileType] = useState("");
   const [validationErrorFileSize, setValidationErrorFileSize] = useState(false);
   const [fileDropped, setFileDropped] = useState(false);
-  const [loadingPercent, setLoadingPercent] = useState(0);
   const [fileName, setFileName] = useState("");
   const [fileSize, setFileSize] = useState(0);
 
@@ -106,7 +105,7 @@ export function DragGifDiv(props) {
               </p>
             </div>
             <div className="display-inline-block margin-left-1 width-fill-available">
-              <p>{fileName}</p>
+              <p className="word-wrap-break-word">{fileName}</p>
               <p className="font-size-14px">{fileSize}</p>
             </div>
             <div className="display-inline-block margin-left-auto">

@@ -1,15 +1,19 @@
 import { useRef } from "react";
-import { GifhovMetadata } from "./GifhovMetadata";
+import { GifhovMetadata } from "@/components/gifhov_component/GifhovMetadata";
 
-export function GifhovComponent(props) {
-  var gifElement = useRef();
-  var audioElement = useRef();
+interface GifhovComponentProps {
+  gifURL: string;
+  audioURL: string;
+}
+export function GifhovComponent({ gifURL, audioURL }: GifhovComponentProps) {
+  const gifElement = useRef<HTMLImageElement>(null);
+  const audioElement = useRef<HTMLAudioElement>(null);
   const mouseOverHandler = () => {
-    audioElement.current.play();
+    audioElement.current?.play();
   };
 
   const mouseOutHandler = () => {
-    audioElement.current.pause();
+    audioElement.current?.pause();
   };
 
   return (
@@ -17,17 +21,12 @@ export function GifhovComponent(props) {
       <div>
         <div ref={gifElement} className="">
           <img
-            src={props.gifURL}
+            src={gifURL}
             onMouseOver={mouseOverHandler}
             onMouseOut={mouseOutHandler}
           />
-          <audio
-            controls
-            src={props.audioURL}
-            preload="auto"
-            ref={audioElement}
-          >
-            <source src={props.audioURL} />
+          <audio controls src={audioURL} preload="auto" ref={audioElement}>
+            <source src={audioURL} />
           </audio>
         </div>
         <GifhovMetadata />

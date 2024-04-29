@@ -2,19 +2,34 @@ import { useState } from "react";
 import { filesize } from "filesize";
 import { uploadGifhov } from "@/utility_functions/uploadGifhov";
 
-export function DragAudioDiv(props) {
+interface DragAudioDivProps {
+  setAudioFileUpload: (file: File) => void;
+  gifFileUpload: File;
+}
+
+export function DragAudioDiv({
+  gifFileUpload,
+  setAudioFileUpload,
+}: DragAudioDivProps) {
   const [draggedOver, setDraggedOver] = useState("");
   const [validationErrorFileType, setValidationErrorFileType] = useState("");
   const [validationErrorFileSize, setValidationErrorFileSize] = useState(false);
   const [fileDropped, setFileDropped] = useState(false);
-  const [loadingPercent, setLoadingPercent] = useState(0);
   const [fileName, setFileName] = useState("");
-  const [fileSize, setFileSize] = useState(0);
+  const [fileSize, setFileSize] = useState("");
+
+  const isValidFileType = (file_type: string) => {
+    if (file_type === "audio/mpeg" || file_type === "audio/x-m4a") {
+      return true;
+    }
+    return false;
+  };
 
   const handleDragEnter = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    if (e.dataTransfer.items[0].type === "audio/mpeg") {
+    const draggedFile = e.dataTransfer.items[0];
+    if (isValidFileType(draggedFile.type)) {
       setDraggedOver("valid");
       setValidationErrorFileType("valid");
       return;
@@ -40,28 +55,24 @@ export function DragAudioDiv(props) {
     e.preventDefault();
     e.stopPropagation();
     const droppedFile = e.dataTransfer.files[0];
-
-    if (e.dataTransfer.items[0].type !== "audio/mpeg") {
+    if (isValidFileType(droppedFile.type)) {
       setValidationErrorFileType("invalid");
     }
     if (droppedFile.size > 30000000) {
       setValidationErrorFileSize(true);
     }
-    if (
-      e.dataTransfer.items[0].type == "audio/mpeg" &&
-      droppedFile.size < 5242880
-    ) {
+    if (isValidFileType(droppedFile.type) && droppedFile.size < 5242880) {
       setFileDropped(true);
       setFileName(droppedFile.name);
       setFileSize(filesize(droppedFile.size));
-      props.setAudioFileUpload(() => {
+      setAudioFileUpload(() => {
         droppedFile;
       });
     }
 
-    if (props.gifFileUpload?.size > 0) {
+    if (gifFileUpload?.size > 0) {
       console.log("dual file upload");
-      uploadGifhov("anonymousGuest", props.gifFileUpload, droppedFile);
+      uploadGifhov("anonymousGuest", gifFileUpload, droppedFile);
     }
 
     //once the dual file upload is complete, reroute to the newly created gifhov page
@@ -69,10 +80,10 @@ export function DragAudioDiv(props) {
   };
 
   const clearFileUploadHandler = () => {
-    props.setAudioFileUpload({});
+    setAudioFileUpload(null);
     setFileDropped(false);
     setFileName("");
-    setFileSize(0);
+    setFileSize("");
     setValidationErrorFileType("");
     setValidationErrorFileSize(false);
     setDraggedOver("");
@@ -113,7 +124,7 @@ export function DragAudioDiv(props) {
               </p>
             </div>
             <div className="display-inline-block margin-left-1 width-fill-available">
-              <p>{fileName}</p>
+              <p className="word-wrap-break-word">{fileName}</p>
               <p className="font-size-14px">{fileSize}</p>
             </div>
             <div className="display-inline-block margin-left-auto">
