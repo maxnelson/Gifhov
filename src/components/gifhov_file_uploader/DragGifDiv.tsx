@@ -4,6 +4,7 @@ import { uploadGifhov } from "@/utility_functions/uploadGifhov";
 
 export function DragGifDiv(props) {
   const [draggedOver, setDraggedOver] = useState("");
+  const [mouseEntered, setMouseEntered] = useState(false);
   const [validationErrorFileType, setValidationErrorFileType] = useState("");
   const [validationErrorFileSize, setValidationErrorFileSize] = useState(false);
   const [fileDropped, setFileDropped] = useState(false);
@@ -36,7 +37,7 @@ export function DragGifDiv(props) {
     setValidationErrorFileSize(false);
   };
 
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+  const handleDrop = async (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
     const droppedFile = e.dataTransfer.files[0];
@@ -56,8 +57,17 @@ export function DragGifDiv(props) {
       props.setGifFileUpload(droppedFile);
     }
     if (props.gifFileUpload?.size > 0) {
-      uploadGifhov("anonymousGuest", droppedFile, props.audioFileUpload);
+      const uploadID = await uploadGifhov(
+        "anonymousGuest",
+        droppedFile,
+        props.audioFileUpload
+      );
+      window.location = "/user/anonymousGuest/gifhov/" + uploadID;
     }
+  };
+
+  const handleMouseEnter = () => {
+    setMouseEntered(true);
   };
 
   const clearFileUploadHandler = () => {
@@ -85,6 +95,8 @@ export function DragGifDiv(props) {
           onDragOver={(e) => handleDragOver(e)}
           onDragEnter={(e) => handleDragEnter(e)}
           onDragLeave={(e) => handleDragLeave(e)}
+          onMouseEnter={(e) => handleMouseEnter(e)}
+          onMouseLeave={() => setMouseEntered(false)}
         >
           {fileDropped ? (
             <i className="fa-regular fa-circle-check color-green font-size-1rem"></i>
@@ -93,7 +105,14 @@ export function DragGifDiv(props) {
               <p className="text-align-center">
                 <i className="fa-regular fa-image dragAndDropIcon"></i>
               </p>
-              <p>drag gif</p>
+              <p
+                className={
+                  "margin-top-1rem " +
+                  (mouseEntered ? "visibility-visible" : "visibility-hidden")
+                }
+              >
+                drag gif file
+              </p>
             </div>
           )}
         </div>
@@ -118,7 +137,12 @@ export function DragGifDiv(props) {
         )}
 
         {!fileDropped && (
-          <div>
+          <div
+            className={
+              "margin-top-1rem " +
+              (mouseEntered ? "visibility-visible" : "visibility-hidden")
+            }
+          >
             <ul>
               <li
                 className={

@@ -6,10 +6,9 @@ interface uploadGifhovFileProps {
 }
 
 export const uploadGifhovFile = async (file) => {
-  debugger;
   const storage = firebase_storage;
   const metadata = {};
-  const storageRef = ref(storage, "users/anonymousGuest/" + file.name);
+  const storageRef = ref(storage, "user/anonymousGuest/gifhov/" + file.name);
   const uploadTask = await uploadBytesResumable(storageRef, file, metadata);
   const downloadURL = await getDownloadURL(uploadTask.ref);
   return downloadURL;

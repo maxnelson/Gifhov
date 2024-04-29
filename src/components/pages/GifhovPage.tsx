@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { GifhovComponent } from "@/components/gifhov_component/GifhovComponent";
-import { ClickDisclaimer } from "@/components/gifhov_file_uploader/ClickDisclaimer";
+import { ClickDisclaimer } from "@/components/page_components/ClickDisclaimer";
+
 import { Footer } from "@/components/Footer";
 import { fetchGifhov } from "@/utility_functions/database_operations/gifhovs/fetchGifhov";
 import { useParams } from "react-router-dom";
@@ -23,11 +24,10 @@ export function GifhovPage() {
   useEffect(() => {
     const fetchGifhovObject = async () => {
       const gifhovObject = await fetchGifhov(ownerID ?? "", gifhovID ?? "");
-      setGifHovObject(gifhovObject as GifHovObjectType);
+      setGifHovObject(gifhovObject);
     };
     fetchGifhovObject();
   }, []);
-  console.log(gifHovObject);
 
   return (
     <>
@@ -37,6 +37,8 @@ export function GifhovPage() {
           <GifhovComponent
             gifURL={gifHovObject.gifURL}
             audioURL={gifHovObject.audioURL}
+            ownerID={ownerID}
+            gifhovID={gifhovID}
           />
         )}
       </div>

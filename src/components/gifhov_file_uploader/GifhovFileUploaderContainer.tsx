@@ -1,9 +1,10 @@
 import { DragGifDiv } from "@/components/gifhov_file_uploader/DragGifDiv";
 import { DragAudioDiv } from "@/components/gifhov_file_uploader/DragAudioDiv";
-import { SampleGifhov } from "@/components/gifhov_file_uploader/SampleGifhov";
+import { GifhovComponent } from "@/components/gifhov_component/GifhovComponent";
+import { GifhovMetadata } from "@/components/gifhov_component/GifhovMetadata";
 import { useState } from "react";
 
-export function GifhovFileUploaderContainer() {
+export function GifhovFileUploaderContainer(props) {
   const [gifFileUpload, setGifFileUpload] = useState(null);
   const [audioFileUpload, setAudioFileUpload] = useState(null);
   return (
@@ -19,7 +20,12 @@ export function GifhovFileUploaderContainer() {
           gifFileUpload={gifFileUpload}
         />
         <span className="equationText">=</span>
-        <SampleGifhov />
+        <GifhovComponent
+          gifURL={props.gifURL}
+          audioURL={props.audioURL}
+          ownerID={props.ownerID}
+          gifhovID={props.gifhovID}
+        />
       </div>
     </>
   );

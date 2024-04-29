@@ -17,6 +17,7 @@ export function DragAudioDiv({
   const [fileDropped, setFileDropped] = useState(false);
   const [fileName, setFileName] = useState("");
   const [fileSize, setFileSize] = useState("");
+  const [mouseEntered, setMouseEntered] = useState(false);
 
   const isValidFileType = (file_type: string) => {
     if (file_type === "audio/mpeg" || file_type === "audio/x-m4a") {
@@ -51,7 +52,7 @@ export function DragAudioDiv({
     setValidationErrorFileSize(false);
   };
 
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+  const handleDrop = async (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
     const droppedFile = e.dataTransfer.files[0];
@@ -71,12 +72,13 @@ export function DragAudioDiv({
     }
 
     if (gifFileUpload?.size > 0) {
-      console.log("dual file upload");
-      uploadGifhov("anonymousGuest", gifFileUpload, droppedFile);
+      const uploadID = await uploadGifhov(
+        "anonymousGuest",
+        gifFileUpload,
+        droppedFile
+      );
+      window.location = "/user/anonymousGuest/gifhov/" + uploadID;
     }
-
-    //once the dual file upload is complete, reroute to the newly created gifhov page
-    //if audio has not been added, wait for audio to be added
   };
 
   const clearFileUploadHandler = () => {
@@ -104,6 +106,8 @@ export function DragAudioDiv({
           onDragOver={(e) => handleDragOver(e)}
           onDragEnter={(e) => handleDragEnter(e)}
           onDragLeave={(e) => handleDragLeave(e)}
+          onMouseEnter={(e) => setMouseEntered(!mouseEntered)}
+          onMouseLeave={(e) => setMouseEntered(!mouseEntered)}
         >
           {fileDropped ? (
             <i className="fa-regular fa-circle-check color-green font-size-1rem"></i>
@@ -112,7 +116,14 @@ export function DragAudioDiv({
               <p className="text-align-center">
                 <i className="fa-solid fa-file-music dragAndDropIcon"></i>
               </p>
-              <p>drag audio</p>
+              <p
+                className={
+                  "margin-top-1rem " +
+                  (mouseEntered ? "visibility-visible" : "visibility-hidden")
+                }
+              >
+                drag audio file
+              </p>
             </div>
           )}
         </div>
@@ -137,7 +148,12 @@ export function DragAudioDiv({
         )}
 
         {!fileDropped && (
-          <div>
+          <div
+            className={
+              "margin-top-1rem " +
+              (mouseEntered ? "visibility-visible" : "visibility-hidden")
+            }
+          >
             <ul>
               <li
                 className={

@@ -103,6 +103,13 @@ table {
   font-size: 2rem;
   
 }
+.text-align-left {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+
 .text-align-center {
   text-align: center;
 }
@@ -137,6 +144,9 @@ ul {
 .margin-left-2 {
   margin-left: 2rem;
 }
+.margin-right-4rem {
+  margin-right: 4rem;
+}
 .position-absolute {
   position: absolute;
 }
@@ -154,9 +164,6 @@ ul {
   width: 16rem;
 }
 
-.text-align-center {
-  text-align: center;
-}
 .margin-bottom-1rem {
 margin-bottom: 1rem;
 }
@@ -217,4 +224,30 @@ margin-bottom: 1rem;
 
 .word-wrap-break-word {
   word-wrap: break-word;
+}
+
+.color-777 {
+  color: #777;
+}
+
+.embeddedImage {
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.position-relative {
+  position: relative;
+}
+.visibility-hidden {
+  visibility: hidden;
+}
+.visibility-visible {
+  visibility: visible;
+}
+.padding-1rem {
+  padding: 1rem;
 }
