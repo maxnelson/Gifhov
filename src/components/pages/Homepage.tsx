@@ -3,16 +3,17 @@ import { GifhovFileUploaderContainer } from "@/components/gifhov_file_uploader/G
 import { fetchGifhov } from "@/utility_functions/database_operations/gifhovs/fetchGifhov";
 import { ClickDisclaimer } from "@/components/page_components/ClickDisclaimer";
 import { VolumeEnabledIcon } from "@/components/page_components/VolumeEnabledIcon";
-
 import { Footer } from "@/components/Footer";
 import { useEffect, useState } from "react";
+import { DocumentData } from "firebase/firestore";
 
 export function Homepage() {
-  const [gifhovObject, setGifhovObject] = useState(null);
+  const [gifhovObject, setGifhovObject] = useState<DocumentData | undefined>(
+    undefined
+  );
   const [audioEnabled, setAudioEnabled] = useState(false);
   document.onmousedown = () => {
     setAudioEnabled(true);
-    console.log("audio enabled");
   };
 
   useEffect(() => {

@@ -9,7 +9,7 @@ export function GifhovMetadata(props) {
   return (
     <>
       <div className="">
-        <div className="display-flex justify-content-space-between margin-top-1rem">
+        <div className="display-flex justify-content-space-between">
           <div className="gifhov_metadata">
             <p className="font-size-12px">by AnonymousGuest</p>
             <p className="font-size-12px">January 7th</p>

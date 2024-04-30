@@ -101,7 +101,7 @@ export function DragGifDiv(props) {
           {fileDropped ? (
             <i className="fa-regular fa-circle-check color-green font-size-1rem"></i>
           ) : (
-            <div className="pointer-events-none">
+            <div className="pointer-events-none margin-top-3rem">
               <p className="text-align-center">
                 <i className="fa-regular fa-image dragAndDropIcon"></i>
               </p>
@@ -139,7 +139,7 @@ export function DragGifDiv(props) {
         {!fileDropped && (
           <div
             className={
-              "margin-top-1rem " +
+              "position-absolute margin-top-1rem " +
               (mouseEntered ? "visibility-visible" : "visibility-hidden")
             }
           >

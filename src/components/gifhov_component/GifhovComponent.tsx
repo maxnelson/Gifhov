@@ -14,13 +14,23 @@ export function GifhovComponent(props) {
 
   return (
     <>
-      <div>
+      <div className="position-relative margin-bottom-2rem">
         <div ref={gifElement} className="">
-          <img
-            src={props.gifURL}
-            onMouseOver={mouseOverHandler}
-            onMouseOut={mouseOutHandler}
-          />
+          <a
+            href={
+              window.location.origin +
+              "/user/" +
+              props.ownerID +
+              "/gifhov/" +
+              props.gifhovID
+            }
+          >
+            <img
+              src={props.gifURL}
+              onMouseOver={mouseOverHandler}
+              onMouseOut={mouseOutHandler}
+            />
+          </a>
           <audio
             controls
             src={props.audioURL}

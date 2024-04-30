@@ -17,7 +17,7 @@ export function LinkOptionsContainer(props) {
 
   return (
     <>
-      <div className="link_options_container">
+      <div className="link_options_container position-absolute width-100p">
         <div className="link_options_labels">
           <div
             className={

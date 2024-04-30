@@ -12,7 +12,9 @@ export function Header() {
         </a>
         <div className="header_buttons_container">
           <div className="header_button_container">
-            <button className="header_button">Browse</button>
+            <a href="/browse">
+              <button className="header_button">Browse</button>
+            </a>
           </div>
           <div className="header_button_container">
             <button className="header_button">Login</button>
