@@ -1,8 +1,9 @@
 import { LinkOptionsContainer } from "@/components/gifhov_component/LinkOptionsContainer";
 import { useState } from "react";
+import { GifhovMetadataPropsType } from "@/utility_functions/typescript/types";
 
-export function GifhovMetadata(props) {
-  const [reblogActive, setReblogActive] = useState(false);
+export function GifhovMetadata(props: GifhovMetadataPropsType) {
+  const [reblogActive, setReblogActive] = useState<boolean>(false);
   const handleClick = () => {
     setReblogActive(!reblogActive);
   };
@@ -25,7 +26,6 @@ export function GifhovMetadata(props) {
           <LinkOptionsContainer
             ownerID={props.ownerID}
             gifhovID={props.gifhovID}
-            reblogActive={reblogActive}
           />
         )}
       </div>

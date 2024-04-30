@@ -6,20 +6,20 @@ import { Footer } from "@/components/Footer";
 import { fetchGifhov } from "@/utility_functions/database_operations/gifhovs/fetchGifhov";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-interface GifHovObjectType {
-  gifURL: string;
-  audioURL: string;
-}
+import { DocumentData } from "firebase/firestore";
 
 export function GifhovPage() {
   const { ownerID, gifhovID } = useParams<{
     ownerID: string;
     gifhovID: string;
   }>();
-  const [gifHovObject, setGifHovObject] = useState<
-    GifHovObjectType | undefined
-  >(undefined);
+  const [gifHovObject, setGifHovObject] = useState<DocumentData | undefined>(
+    undefined
+  );
+  const [audioEnabled, setAudioEnabled] = useState<boolean>(false);
+  document.onmousedown = () => {
+    setAudioEnabled(true);
+  };
 
   useEffect(() => {
     const fetchGifhovObject = async () => {
@@ -42,7 +42,7 @@ export function GifhovPage() {
           />
         )}
       </div>
-      <ClickDisclaimer />
+      <ClickDisclaimer audioEnabled={audioEnabled} />
       <Footer />
     </>
   );

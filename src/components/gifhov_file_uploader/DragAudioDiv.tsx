@@ -2,15 +2,7 @@ import { useState } from "react";
 import { filesize } from "filesize";
 import { uploadGifhov } from "@/utility_functions/uploadGifhov";
 
-interface DragAudioDivProps {
-  setAudioFileUpload: (file: File) => void;
-  gifFileUpload: File;
-}
-
-export function DragAudioDiv({
-  gifFileUpload,
-  setAudioFileUpload,
-}: DragAudioDivProps) {
+export function DragAudioDiv(props) {
   const [draggedOver, setDraggedOver] = useState("");
   const [validationErrorFileType, setValidationErrorFileType] = useState("");
   const [validationErrorFileSize, setValidationErrorFileSize] = useState(false);
@@ -66,15 +58,15 @@ export function DragAudioDiv({
       setFileDropped(true);
       setFileName(droppedFile.name);
       setFileSize(filesize(droppedFile.size));
-      setAudioFileUpload(() => {
+      props.setAudioFileUpload(() => {
         droppedFile;
       });
     }
 
-    if (gifFileUpload?.size > 0) {
+    if (props.gifFileUpload?.size > 0) {
       const uploadID = await uploadGifhov(
         "anonymousGuest",
-        gifFileUpload,
+        props.gifFileUpload,
         droppedFile
       );
       window.location = "/user/anonymousGuest/gifhov/" + uploadID;
@@ -82,7 +74,7 @@ export function DragAudioDiv({
   };
 
   const clearFileUploadHandler = () => {
-    setAudioFileUpload(null);
+    props.setAudioFileUpload(null);
     setFileDropped(false);
     setFileName("");
     setFileSize("");

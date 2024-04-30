@@ -1,9 +1,7 @@
-import { useState } from "react";
-
-export function ClickDisclaimer(props) {
+export function ClickDisclaimer(props: { audioEnabled: boolean }) {
   return (
     <>
-      <div className="click_disclaimer text-align-center margin-top-2rem">
+      <div className="click_disclaimer text-align-center margin-top-6rem">
         <i
           className={
             "fa-solid font-size-2rem margin-bottom-1rem " +

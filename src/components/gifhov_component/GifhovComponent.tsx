@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { GifhovMetadata } from "@/components/gifhov_component/GifhovMetadata";
+import { GifhovComponentPropsType } from "@/utility_functions/typescript/types";
 
-export function GifhovComponent(props) {
+export function GifhovComponent(props: GifhovComponentPropsType) {
   const gifElement = useRef<HTMLImageElement>(null);
   const audioElement = useRef<HTMLAudioElement>(null);
   const mouseOverHandler = () => {

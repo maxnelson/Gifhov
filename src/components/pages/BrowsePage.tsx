@@ -4,9 +4,13 @@ import { Footer } from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { GifhovComponent } from "@/components/gifhov_component/GifhovComponent";
 import { VolumeEnabledIcon } from "@/components/page_components/VolumeEnabledIcon";
+import { DocumentData } from "firebase/firestore";
+import { GifhovComponentObjectType } from "@/utility_functions/typescript/types";
 
 export function BrowsePage() {
-  const [gifhovObject, setGifhovObject] = useState([]);
+  const [gifhovObject, setGifhovObject] = useState<DocumentData | undefined>(
+    undefined
+  );
   const [audioEnabled, setAudioEnabled] = useState(false);
   document.onmousedown = () => {
     setAudioEnabled(true);
@@ -25,7 +29,7 @@ export function BrowsePage() {
       <VolumeEnabledIcon audioEnabled={audioEnabled} />
       {gifhovObject && (
         <div className="display-flex flex-direction-column align-items-center">
-          {gifhovObject.map((gifhov) => (
+          {gifhovObject.map((gifhov: GifhovComponentObjectType) => (
             <div key={gifhov.id}>
               <GifhovComponent
                 gifURL={gifhov.gifURL}

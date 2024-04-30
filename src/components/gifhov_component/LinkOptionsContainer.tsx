@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function LinkOptionsContainer(props) {
+export function LinkOptionsContainer(ownerID: string, gifhovID: string) {
   const [linkOptionLinkActive, setLinkOptionLinkActive] = useState(true);
   const [linkOptionEmbedActive, setLinkOptionEmbedActive] = useState(false);
 
@@ -44,15 +44,15 @@ export function LinkOptionsContainer(props) {
                 linkOptionLinkActive
                   ? window.location.origin +
                     "/user/" +
-                    props.ownerID +
+                    ownerID +
                     "/gifhov/" +
-                    props.gifhovID
+                    gifhovID
                   : "<iframe scrolling='no'frameborder='0'src=" +
                     window.location.origin +
                     "/user/" +
-                    props.ownerID +
+                    ownerID +
                     "/embed/" +
-                    props.gifhovID +
+                    gifhovID +
                     "'height='None'width='None'></iframe>"
               }
               onChange={handleChange}

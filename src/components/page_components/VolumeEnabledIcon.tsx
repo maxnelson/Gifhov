@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-export function VolumeEnabledIcon(props) {
+export function VolumeEnabledIcon(props: { audioEnabled: boolean }) {
   return (
     <>
       <div className="padding-1rem text-align-right margin-right-4rem">
