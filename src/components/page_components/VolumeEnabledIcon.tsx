@@ -1,7 +1,7 @@
 export function VolumeEnabledIcon(props: { audioEnabled: boolean }) {
   return (
     <>
-      <div className="padding-1rem text-align-right margin-right-4rem">
+      <div className="padding-1rem text-align-right">
         <i
           className={
             "fa-solid font-size-2rem " +

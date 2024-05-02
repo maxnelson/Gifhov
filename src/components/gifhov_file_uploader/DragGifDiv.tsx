@@ -82,7 +82,7 @@ export function DragGifDiv(props) {
 
   return (
     <>
-      <div>
+      <div className="fileUploadINputDivContainer">
         <div
           className={
             draggedOver === "valid" || fileDropped

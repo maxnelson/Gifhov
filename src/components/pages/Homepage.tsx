@@ -20,7 +20,7 @@ export function Homepage() {
     const fetchGifhovObject = async () => {
       const gifhovObjectDocument = await fetchGifhov(
         "anonymousGuest",
-        "NwXG47nDNVNlxJTteoMw"
+        "homepage_gifhov"
       );
       setGifhovObject(gifhovObjectDocument);
     };
@@ -31,16 +31,18 @@ export function Homepage() {
     <>
       <div>
         <Header />
-        <VolumeEnabledIcon audioEnabled={audioEnabled} />
-        {gifhovObject && (
-          <GifhovFileUploaderContainer
-            ownerID="anonymousGuest"
-            gifhovID="QPE0PNx0MRU9wPEhve0Z"
-            gifURL={gifhovObject.gifURL}
-            audioURL={gifhovObject.audioURL}
-          />
-        )}
-        <ClickDisclaimer audioEnabled={audioEnabled} />
+        <div className="width-90-percent margin-0-auto">
+          <VolumeEnabledIcon audioEnabled={audioEnabled} />
+          {gifhovObject && (
+            <GifhovFileUploaderContainer
+              ownerID="anonymousGuest"
+              gifhovID="QPE0PNx0MRU9wPEhve0Z"
+              gifURL={gifhovObject.gifURL}
+              audioURL={gifhovObject.audioURL}
+            />
+          )}
+          <ClickDisclaimer audioEnabled={audioEnabled} />
+        </div>
         <Footer />
       </div>
     </>

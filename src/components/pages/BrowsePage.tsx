@@ -26,22 +26,24 @@ export function BrowsePage() {
   return (
     <>
       <Header />
-      <VolumeEnabledIcon audioEnabled={audioEnabled} />
-      {gifhovObject && (
-        <div className="display-flex flex-direction-column align-items-center">
-          {gifhovObject.map((gifhov: GifhovComponentObjectType) => (
-            <div key={gifhov.id}>
-              <GifhovComponent
-                gifURL={gifhov.gifURL}
-                audioURL={gifhov.audioURL}
-                ownerID={"anonymousGuest"}
-                gifhovID={gifhov.id}
-                marginBottom={true}
-              />
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="">
+        <VolumeEnabledIcon audioEnabled={audioEnabled} />
+        {gifhovObject && (
+          <div className="display-flex flex-direction-column align-items-center">
+            {gifhovObject.map((gifhov: GifhovComponentObjectType) => (
+              <div key={gifhov.id}>
+                <GifhovComponent
+                  gifURL={gifhov.gifURL}
+                  audioURL={gifhov.audioURL}
+                  ownerID={"anonymousGuest"}
+                  gifhovID={gifhov.id}
+                  marginBottom={true}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
       <Footer />
     </>
   );
