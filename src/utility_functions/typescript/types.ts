@@ -16,4 +16,5 @@ export interface GifhovComponentPropsType {
   audioURL: string;
   ownerID: string;
   gifhovID: string;
+  marginBottom: boolean;
 }

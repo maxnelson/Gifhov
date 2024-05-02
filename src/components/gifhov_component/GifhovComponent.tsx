@@ -15,7 +15,11 @@ export function GifhovComponent(props: GifhovComponentPropsType) {
 
   return (
     <>
-      <div className="position-relative margin-bottom-2rem">
+      <div
+        className={
+          "position-relative " + (props.marginBottom && "margin-bottom-2rem")
+        }
+      >
         <div ref={gifElement} className="">
           <a
             href={

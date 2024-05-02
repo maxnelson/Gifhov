@@ -36,6 +36,7 @@ export function BrowsePage() {
                 audioURL={gifhov.audioURL}
                 ownerID={"anonymousGuest"}
                 gifhovID={gifhov.id}
+                marginBottom={true}
               />
             </div>
           ))}
