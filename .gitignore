@@ -148,3 +148,4 @@ dist
 .pnp.*
 
 src/css/font_awesome/
+src/fonts/

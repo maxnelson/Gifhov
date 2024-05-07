@@ -6,6 +6,15 @@ automatic_scaling:
   max_instances: 1
 
 handlers:
+  - url: /
+    static_files: dist/index.html
+    upload: dist/index.html
+    secure: always
+    mime_type: text/html
+  - url: /assets/css/
+    static_dir: assets/css
+    secure: always
+    mime_type: text/css
   - url: /.*
     secure: always
     script: auto

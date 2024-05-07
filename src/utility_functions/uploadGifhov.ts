@@ -12,7 +12,7 @@ export const uploadGifhov = async (
   const new_firestore_object = {
     gifURL: gifFileURL,
     audioURL: audioFileURL,
-    lastUpdated: serverTimestamp(),
+    uploadTime: serverTimestamp(),
   };
   const new_firestore_record = await addDoc(
     collection(

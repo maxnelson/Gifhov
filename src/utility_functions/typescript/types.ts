@@ -17,4 +17,5 @@ export interface GifhovComponentPropsType {
   ownerID: string;
   gifhovID: string;
   marginBottom: boolean;
+  marginTop: boolean;
 }

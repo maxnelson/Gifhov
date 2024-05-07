@@ -38,6 +38,7 @@ export function BrowsePage() {
                   ownerID={"anonymousGuest"}
                   gifhovID={gifhov.id}
                   marginBottom={true}
+                  marginTop={true}
                 />
               </div>
             ))}

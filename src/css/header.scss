@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'couturebold';
-  src: url('fonts/couture-webfont.eot');
-  src: url('fonts/outure-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/couture-webfont.woff') format('woff'),
-       url('fonts/couture-webfont.ttf') format('truetype'),
-       url('fonts/couture-webfont.svg#couturebold') format('svg');
+  src: url('@/fonts/couture-webfont.eot');
+  src: url('@/fonts/couture-webfont.eot?#iefix') format('embedded-opentype'),
+       url('@/fonts/couture-webfont.woff') format('woff'),
+       url('@/fonts/couture-webfont.ttf') format('truetype'),
+       url('@/fonts/couture-webfont.svg#couturebold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
