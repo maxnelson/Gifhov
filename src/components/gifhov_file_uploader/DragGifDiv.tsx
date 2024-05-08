@@ -103,7 +103,7 @@ export function DragGifDiv(props) {
           ) : (
             <div className="pointer-events-none margin-top-3rem">
               <p className="text-align-center">
-                <i className="fa-regular fa-image dragAndDropIcon"></i>
+                <i className="fa-regular fa-image font-size-2rem"></i>
               </p>
               <p
                 className={
@@ -117,13 +117,13 @@ export function DragGifDiv(props) {
           )}
         </div>
         {fileDropped && (
-          <div className="position-absolute padding-1 display-flex width-16rem">
+          <div className="position-absolute padding-1rem display-flex width-16rem">
             <div className="display-inline-block">
               <p>
                 <i className="fa-regular fa-file font-size-2rem"></i>
               </p>
             </div>
-            <div className="display-inline-block margin-left-1 width-fill-available">
+            <div className="display-inline-block margin-left-1rem width-fill-available">
               <p className="word-wrap-break-word">{fileName}</p>
               <p className="font-size-14px">{fileSize}</p>
             </div>

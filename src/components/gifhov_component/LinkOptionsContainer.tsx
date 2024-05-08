@@ -17,7 +17,7 @@ export function LinkOptionsContainer(props) {
 
   return (
     <>
-      <div className="link_options_container position-absolute width-100p">
+      <div className="link_options_container position-absolute width-100-percent">
         <div className="link_options_labels">
           <div
             className={
@@ -39,7 +39,7 @@ export function LinkOptionsContainer(props) {
           </div>
           <div>
             <input
-              className="border-1px-solid-ddd padding-10px width-100p"
+              className="border-1px-solid-ddd padding-10px width-100-percent"
               value={
                 linkOptionLinkActive
                   ? window.location.origin +

@@ -32,7 +32,7 @@ export function GifhovPage() {
   return (
     <>
       <Header />
-      <div className="gifhov_page_container">
+      <div className="display-flex justify-content-center margin-top-4rem">
         {gifHovObject && (
           <GifhovComponent
             gifURL={gifHovObject.gifURL}
