@@ -29,7 +29,7 @@ export function BrowsePage() {
       <div className="">
         <VolumeEnabledIcon audioEnabled={audioEnabled} />
         {gifhovObject && (
-          <div className="display-flex flex-direction-column _align-items--center">
+          <div className="_display--flex _flex-direction--column _align-items--center">
             {gifhovObject.map((gifhov: GifhovComponentObjectType) => (
               <div key={gifhov.id}>
                 <GifhovComponent

@@ -31,7 +31,7 @@ export function Homepage() {
     <>
       <div>
         <Header />
-        <div className="width-90-percent margin-0-auto">
+        <div className="_width--90percent _margin--0_auto">
           <VolumeEnabledIcon audioEnabled={audioEnabled} />
           {gifhovObject && (
             <GifhovFileUploaderContainer

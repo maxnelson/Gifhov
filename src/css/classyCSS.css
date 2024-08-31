@@ -562,7 +562,7 @@
 .display-contents {
   display: contents;
 }
-.display-flex {
+._display--flex {
   display: flex;
 }
 .display-grid {
@@ -730,7 +730,7 @@
 .flex-11 {
   flex: 11;
 }
-.flex-direction-column {
+._flex-direction--column {
   flex-direction: column;
 }
 .flex-direction-row {
@@ -808,13 +808,13 @@
 .font-size-11px {
   font-size: 11px;
 }
-.font-size-12px {
+._font-size--12px {
   font-size: 12px;
 }
 .font-size-13px {
   font-size: 13px;
 }
-.font-size-14px {
+._font-size--14px {
   font-size: 14px;
 }
 .font-size-15px {
@@ -943,10 +943,10 @@
 .font-size-30pt {
   font-size: 30pt;
 }
-.font-size-1rem {
+._font-size--1rem {
   font-size: 1rem;
 }
-.font-size-2rem {
+._font-size--2rem {
   font-size: 2rem;
 }
 .font-size-3rem {
@@ -1141,10 +1141,10 @@
 .justify-content-flex-end {
   justify-content: flex-end;
 }
-.justify-content-center {
+._justify-content--center {
   justify-content: center;
 }
-.justify-content-space-between {
+._justify-content--space-between {
   justify-content: space-between;
 }
 .justify-content-space-around {
@@ -1240,10 +1240,10 @@
 .margin-bottom-0-75rem {
   margin-bottom: 0.75rem;
 }
-.margin-bottom-1rem {
+._margin-bottom--1rem {
   margin-bottom: 1rem;
 }
-.margin-bottom-2rem {
+._margin-bottom--2rem {
   margin-bottom: 2rem;
 }
 .margin-bottom-3rem {
@@ -1288,7 +1288,7 @@
 .margin-bottom-auto {
   margin-bottom: auto;
 }
-.margin-left-1rem {
+._margin-left--1rem {
   margin-left: 1rem;
 }
 .margin-left-2rem {
@@ -1333,7 +1333,7 @@
 .margin-left-15rem {
   margin-left: 15rem;
 }
-.margin-left-auto {
+._margin-left--auto {
   margin-left: auto;
 }
 .margin-right-0rem {
@@ -1390,22 +1390,22 @@
 .margin-top-0 {
   margin-top: 0;
 }
-.margin-top-1rem {
+._margin-top--1rem {
   margin-top: 1rem;
 }
 .margin-top-2rem {
   margin-top: 2rem;
 }
-.margin-top-3rem {
+._margin-top--3rem {
   margin-top: 3rem;
 }
-.margin-top-4rem {
+._margin-top--4rem {
   margin-top: 4rem;
 }
-.margin-top-5rem {
+._margin-top--5rem {
   margin-top: 5rem;
 }
-.margin-top-6rem {
+._margin-top--6rem {
   margin-top: 6rem;
 }
 .margin-top-7rem {
@@ -1519,7 +1519,7 @@
 .margin-auto {
   margin: auto;
 }
-.margin-0-auto {
+._margin--0_auto {
   margin: 0 auto;
 }
 .max-height-0 {
@@ -1627,7 +1627,7 @@
 .max-width-4rem {
   width: 4rem;
 }
-.max-width-5rem {
+._max-width--5rem {
   width: 5rem;
 }
 .max-width-6rem {
@@ -1645,13 +1645,13 @@
 .max-width-10rem {
   width: 10rem;
 }
-.max-width-100-percent {
+.max-_width--100percent {
   width: 100%;
 }
 .max-width-95-percent {
   width: 95%;
 }
-.max-width-90-percent {
+.max-_width--90percent {
   width: 90%;
 }
 .max-width-85-percent {
@@ -1945,13 +1945,13 @@
 .padding-9px {
   padding: 9px;
 }
-.padding-10px {
+._padding--10px {
   padding: 10px;
 }
 .padding-50px {
   padding: 50px;
 }
-.padding-1rem {
+._padding--1rem {
   padding: 1rem;
 }
 .padding-2rem {
@@ -1984,7 +1984,7 @@
 .pointer-events-auto {
   pointer-events: auto;
 }
-.pointer-events-none {
+._pointer-events--none {
   pointer-events: none;
 }
 .pointer-events-initial {
@@ -1996,13 +1996,13 @@
 .position-static {
   position: static;
 }
-.position-absolute {
+._position--absolute {
   position: absolute;
 }
 .position-fixed {
   position: fixed;
 }
-.position-relative {
+._position--relative {
   position: relative;
 }
 .position-sticky {
@@ -2113,10 +2113,10 @@
 .text-align-left {
   text-align: left;
 }
-.text-align-right {
+._text-align--right {
   text-align: right;
 }
-.text-align-center {
+._text-align--center {
   text-align: center;
 }
 .text-align-justify {
@@ -2179,10 +2179,10 @@
 .vertical-align-inherit {
   vertical-align: inherit;
 }
-.visibility-hidden {
+._visibility--hidden {
   visibility: hidden;
 }
-.visibility-visible {
+._visibility--visible {
   visibility: visible;
 }
 .visibility-collapse {
@@ -2230,16 +2230,16 @@
 .width-10rem {
   width: 10rem;
 }
-.width-16rem {
+._width--16rem {
   width: 16rem;
 }
-.width-100-percent {
+._width--100percent {
   width: 100%;
 }
 .width-95-percent {
   width: 95%;
 }
-.width-90-percent {
+._width--90percent {
   width: 90%;
 }
 .width-85-percent {
@@ -2299,7 +2299,7 @@
 .width-80-percent-minus-1rem {
   width: calc(80% - 1rem);
 }
-.width-fill-available {
+._width--fill-available {
   width: fill-available;
   width: -webkit-fill-available;
 }
@@ -2309,7 +2309,7 @@
 .word-wrap-normal {
   word-wrap: normal;
 }
-.word-wrap-break-word {
+._word-wrap--break-word {
   word-wrap: break-word;
 }
 .word-wrap-initial {

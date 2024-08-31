@@ -10,10 +10,10 @@ export function GifhovMetadata(props: GifhovMetadataPropsType) {
   return (
     <>
       <div className="">
-        <div className="display-flex justify-content-space-between">
+        <div className="_display--flex _justify-content--space-between">
           <div className="gifhov_metadata">
-            <p className="font-size-12px">by AnonymousGuest</p>
-            <p className="font-size-12px">January 7th</p>
+            <p className="_font-size--12px">by AnonymousGuest</p>
+            <p className="_font-size--12px">January 7th</p>
           </div>
           <div className="share_icon_container" onClick={handleClick}>
             <img

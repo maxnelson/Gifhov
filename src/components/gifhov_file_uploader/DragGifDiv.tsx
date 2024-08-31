@@ -99,16 +99,18 @@ export function DragGifDiv(props) {
           onMouseLeave={() => setMouseEntered(false)}
         >
           {fileDropped ? (
-            <i className="fa-regular fa-circle-check color-green font-size-1rem"></i>
+            <i className="fa-regular fa-circle-check color-green _font-size--1rem"></i>
           ) : (
-            <div className="pointer-events-none margin-top-3rem">
-              <p className="text-align-center">
-                <i className="fa-regular fa-image font-size-2rem"></i>
+            <div className="_pointer-events--none  _margin-top--3rem">
+              <p className="_text-align--center">
+                <i className="fa-regular fa-image _font-size--2rem"></i>
               </p>
               <p
                 className={
-                  "margin-top-1rem " +
-                  (mouseEntered ? "visibility-visible" : "visibility-hidden")
+                  "_margin-top--1rem " +
+                  (mouseEntered
+                    ? "_visibility--visible"
+                    : "_visibility--hidden")
                 }
               >
                 drag gif file
@@ -117,17 +119,17 @@ export function DragGifDiv(props) {
           )}
         </div>
         {fileDropped && (
-          <div className="position-absolute padding-1rem display-flex width-16rem">
+          <div className="_position--absolute _padding--1rem _display--flex _width--16rem">
             <div className="_display--inline-block">
               <p>
-                <i className="fa-regular fa-file font-size-2rem"></i>
+                <i className="fa-regular fa-file _font-size--2rem"></i>
               </p>
             </div>
-            <div className="_display--inline-block margin-left-1rem width-fill-available">
-              <p className="word-wrap-break-word">{fileName}</p>
-              <p className="font-size-14px">{fileSize}</p>
+            <div className="_display--inline-block _margin-left--1rem _width--fill-available">
+              <p className="_word-wrap--break-word">{fileName}</p>
+              <p className="_font-size--14px">{fileSize}</p>
             </div>
-            <div className="_display--inline-block margin-left-auto">
+            <div className="_display--inline-block _margin-left--auto">
               <i
                 className="fa-solid fa-circle-xmark _cursor--pointer"
                 onClick={clearFileUploadHandler}
@@ -139,8 +141,8 @@ export function DragGifDiv(props) {
         {!fileDropped && (
           <div
             className={
-              "position-absolute margin-top-1rem " +
-              (mouseEntered ? "visibility-visible" : "visibility-hidden")
+              "_position--absolute _margin-top--1rem " +
+              (mouseEntered ? "_visibility--visible" : "_visibility--hidden")
             }
           >
             <ul>
