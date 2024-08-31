@@ -38,6 +38,24 @@ export function LinkOptionsContainer(props) {
             <p>Embed</p>
           </div>
           <div>
+            <div className="border-1px-solid-ddd padding-10px width-100-percent">
+              <p>
+                {linkOptionLinkActive
+                  ? window.location.origin +
+                    "/user/" +
+                    props.ownerID +
+                    "/gifhov/" +
+                    props.gifhovID
+                  : "<iframe scrolling='no'frameborder='0'src=" +
+                    window.location.origin +
+                    "/user/" +
+                    props.ownerID +
+                    "/embed/" +
+                    props.gifhovID +
+                    "'height='None'width='None'></iframe>"}
+              </p>
+            </div>
+
             <input
               className="border-1px-solid-ddd padding-10px width-100-percent"
               value={
