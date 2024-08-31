@@ -21,7 +21,7 @@ export function LinkOptionsContainer(props) {
         <div className="link_options_labels">
           <div
             className={
-              "link_option display-inline-block cursor-pointer " +
+              "link_option _display--inline-block _cursor--pointer " +
               (linkOptionLinkActive ? "link_option_active" : "")
             }
             onClick={handleLinkOptionLinkClick}
@@ -30,7 +30,7 @@ export function LinkOptionsContainer(props) {
           </div>
           <div
             className={
-              "link_option display-inline-block cursor-pointer " +
+              "link_option _display--inline-block _cursor--pointer " +
               (linkOptionEmbedActive ? "link_option_active" : "")
             }
             onClick={handleLinkOptionEmbedClick}

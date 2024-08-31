@@ -118,18 +118,18 @@ export function DragGifDiv(props) {
         </div>
         {fileDropped && (
           <div className="position-absolute padding-1rem display-flex width-16rem">
-            <div className="display-inline-block">
+            <div className="_display--inline-block">
               <p>
                 <i className="fa-regular fa-file font-size-2rem"></i>
               </p>
             </div>
-            <div className="display-inline-block margin-left-1rem width-fill-available">
+            <div className="_display--inline-block margin-left-1rem width-fill-available">
               <p className="word-wrap-break-word">{fileName}</p>
               <p className="font-size-14px">{fileSize}</p>
             </div>
-            <div className="display-inline-block margin-left-auto">
+            <div className="_display--inline-block margin-left-auto">
               <i
-                className="fa-solid fa-circle-xmark cursor-pointer"
+                className="fa-solid fa-circle-xmark _cursor--pointer"
                 onClick={clearFileUploadHandler}
               ></i>
             </div>

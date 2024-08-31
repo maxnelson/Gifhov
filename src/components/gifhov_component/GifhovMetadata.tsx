@@ -18,7 +18,7 @@ export function GifhovMetadata(props: GifhovMetadataPropsType) {
           <div className="share_icon_container" onClick={handleClick}>
             <img
               src="/images/user_interface/general/reblog_icon.jpg"
-              className="opacity-0-3 width-1-5rem cursor-pointer reblog-icon"
+              className="opacity-0-3 width-1-5rem _cursor--pointer reblog-icon"
             />
           </div>
         </div>

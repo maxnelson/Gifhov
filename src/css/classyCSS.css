@@ -31,7 +31,7 @@
 .align-items-stretch {
   align-items: stretch;
 }
-.align-items-center {
+._align-items--center {
   align-items: center;
 }
 .align-items-flex-start {
@@ -508,7 +508,7 @@
 .cursor-not-allowed {
   cursor: not-allowed;
 }
-.cursor-pointer {
+._cursor--pointer {
   cursor: pointer;
 }
 .cursor-progress {
@@ -553,7 +553,7 @@
 .display-inline {
   display: inline;
 }
-.display-inline-block {
+._display--inline-block {
   display: inline-block;
 }
 .display-block {
