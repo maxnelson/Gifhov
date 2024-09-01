@@ -99,7 +99,7 @@ export function DragGifDiv(props) {
           onMouseLeave={() => setMouseEntered(false)}
         >
           {fileDropped ? (
-            <i className="fa-regular fa-circle-check color-green _font-size--1rem"></i>
+            <i className="fa-regular fa-circle-check _color--var_--green-100_ _font-size--1rem"></i>
           ) : (
             <div className="_pointer-events--none  _margin-top--3rem">
               <p className="_text-align--center">

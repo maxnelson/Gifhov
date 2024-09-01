@@ -1,3 +1,23 @@
+:root {
+  --light-blue-100: #bcf3ff;
+  --blue-100: #2d739e;
+  --blue-200: #60acd8;
+  --blue-300: #2f7fac;
+  --blue-400: #215777;
+  --blue-500: #154765;
+  --gray-100: #f9f9f9;
+  --gray-150: #eeeeee;
+  --gray-200: #d8d8d8;
+  --gray-250: #ddd;
+  --gray-300: #bdbdbd;
+  --gray-400: #aaa;
+  --gray-500: #767676;
+  --gray-600: #333;
+  --green-100: #28a745;
+  --red-100: #dc3546;
+  --red-200: #cc181e;
+}
+
 @font-face {
   font-family: "couturebold";
   src: url("@/fonts/couture-webfont.eot");
@@ -9,25 +29,11 @@
   font-style: normal;
 }
 
-:root {
-  --light-blue-100: #bcf3ff;
-  --blue-100: #2d739e;
-  --blue-200: #60acd8;
-  --blue-300: #2f7fac;
-  --blue-400: #215777;
-  --blue-500: #154765;
-  --gray-100: #f9f9f9;
-  --gray-200: #d8d8d8;
-  --gray-300: #bdbdbd;
-  --gray-400: #aaa;
-  --green-100: #28a745;
-  --red-100: #dc3546;
-  --red-200: #cc181e;
-}
-
 *,
 *:after,
 *:before {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -35,9 +41,16 @@
   outline: none;
   box-shadow: none;
 }
+
+html {
+  font-size: 16px;
+  color: var(--gray-400);
+}
+
 #root {
   font-family: "Helvetica", Helvetica, "Helvetica Neue", Arial, sans-serif;
 }
+
 a,
 button {
   cursor: pointer;
@@ -49,43 +62,6 @@ a:hover {
 }
 button {
   border: none;
-}
-
-body,
-a,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label,
-span,
-input,
-select,
-textarea,
-button,
-ol,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-a,
-p,
-i,
-label,
-input,
-select,
-textarea,
-button,
-ol,
-ul,
-li {
-  font-size: 15px;
-  color: #aaa;
 }
 ul {
   list-style-position: inside;
@@ -101,9 +77,6 @@ table {
   border-spacing: 0;
 }
 
-.color-green {
-  color: var(--green-100);
-}
 .reblog-icon {
   &:hover {
     opacity: 0.8;
@@ -120,7 +93,7 @@ table {
 .link_option_active {
   border-bottom: 2px solid var(--red-200);
   p {
-    color: #333;
+    color: var(--gray-600);
   }
 }
 .embeddedImage {
@@ -253,4 +226,31 @@ audio {
 
 .width-1-5rem {
   width: 1.5rem;
+}
+.bottom_p6rem {
+  bottom: 0.6rem;
+}
+
+._color--var_--green-100_ {
+  color: var(--green-100);
+}
+
+.copyLinkTooltip {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  background-color: var(--gray-300);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 14px;
+  visibility: hidden;
+  &.show {
+    transition: opacity 1s ease, transform 2s ease;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-30px);
+  }
 }

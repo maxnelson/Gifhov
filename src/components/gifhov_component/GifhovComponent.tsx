@@ -18,11 +18,11 @@ export function GifhovComponent(props: GifhovComponentPropsType) {
       <div
         className={
           "_position--relative " +
-          (props.marginBottom ? " _margin-bottom--2rem " : "") +
-          (props.marginTop ? " _margin-top--5rem " : "")
+          (props.marginBottom ? "_margin-bottom--2rem " : "") +
+          (props.marginTop ? "_margin-top--5rem " : "")
         }
       >
-        <div ref={gifElement} className="">
+        <div ref={gifElement}>
           <a
             href={
               window.location.origin +
