@@ -4,7 +4,7 @@ export function ClickDisclaimer(props: { audioEnabled: boolean }) {
       <div className="click_disclaimer _text-align--center _margin-top--6rem">
         <i
           className={
-            "fa-solid _font-size--2rem _margin-bottom--1rem  t2cd" +
+            "fa-solid _font-size--2rem _margin-bottom--1rem " +
             (props.audioEnabled ? "fa-volume" : "fa-volume-xmark")
           }
         ></i>

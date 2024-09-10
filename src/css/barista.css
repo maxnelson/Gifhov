@@ -124,6 +124,12 @@
 ._font-size--1rem {
   font-size: 1rem;
 }
+._margin-top--6rem {
+  margin-top: 6rem;
+}
+._margin-bottom--1rem {
+  margin-bottom: 1rem;
+}
 ._flex-direction--column {
   flex-direction: column;
 }
@@ -138,13 +144,4 @@
 }
 ._margin--0_auto {
   margin: 0 auto;
-}
-._margin-top--6rem {
-  margin-top: 6rem;
-}
-._margin-bottom--1rem {
-  margin-bottom: 1rem;
-}
-._margin-top--15rem {
-  margin-top: 15rem;
 }
