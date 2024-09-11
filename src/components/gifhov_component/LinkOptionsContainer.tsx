@@ -55,7 +55,7 @@ export function LinkOptionsContainer(props) {
           <div className="_border--1px_solid_var_--gray-500_ _width--100percent _border-radius--4px _border-top-left-radius--0 _display--flex _align-items--center">
             <p
               ref={linkTextRef}
-              className="_flex--1 _margin--0 _overflow-x--scroll _white-space--nowrap _padding--10px"
+              className="linkOptionContainer _flex--1 _margin--0 _overflow-x--scroll _white-space--nowrap _padding--10px"
             >
               {linkOptionLinkActive
                 ? window.location.origin +

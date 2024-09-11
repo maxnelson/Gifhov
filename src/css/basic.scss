@@ -254,3 +254,12 @@ audio {
     transform: translateY(-30px);
   }
 }
+.linkOptionContainer {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.linkOptionContainer::-webkit-scrollbar {
+  display: none;
+}

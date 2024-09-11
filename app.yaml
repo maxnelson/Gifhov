@@ -20,6 +20,11 @@ handlers:
     static_files: dist/\1
     upload: dist/.*\.(png|jpg|jpeg|gif|ico|json)$
 
+  - url: /(.*\.(woff|woff2|ttf|eot|svg))$
+    static_files: dist/\1
+    upload: dist/.*\.(woff|woff2|ttf|eot|svg)$
+    mime_type: application/font-woff
+
   - url: /.*
     static_files: dist/index.html
     upload: dist/index.html

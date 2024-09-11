@@ -775,6 +775,20 @@
 .fa-image::before {
   content: "\f03e";
 }
+.fa-volume-low::before {
+  content: "\f027";
+}
+
+.fa-volume-down::before {
+  content: "\f027";
+}
+.fa-volume::before {
+  content: "\f6a8";
+}
+
+.fa-volume-medium::before {
+  content: "\f6a8";
+}
 
 :root,
 :host {
