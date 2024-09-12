@@ -18,8 +18,7 @@ export function LinkOptionsContainer(props) {
 
   const copyLink = async (event) => {
     await navigator.clipboard.writeText(linkTextRef.current.textContent);
-    copyIconRef.current.className =
-      "fa-solid fa-check _color--var_--green-100_";
+    copyIconRef.current.className = "fa-solid fa-check _color--var_green-100_";
     copyLinkTooltipRef.current.classList.add("show");
     setTimeout(() => {
       copyIconRef.current.className = "fa-solid fa-copy";
@@ -52,7 +51,7 @@ export function LinkOptionsContainer(props) {
           <div ref={copyLinkTooltipRef} className="copyLinkTooltip">
             Copied!
           </div>
-          <div className="_border--1px_solid_var_--gray-500_ _width--100percent _border-radius--4px _border-top-left-radius--0 _display--flex _align-items--center">
+          <div className="_border--1px_solid_var_gray-500_ _width--100percent _border-radius--4px _border-top-left-radius--0 _display--flex _align-items--center">
             <p
               ref={linkTextRef}
               className="linkOptionContainer _flex--1 _margin--0 _overflow-x--scroll _white-space--nowrap _padding--10px"
@@ -72,7 +71,7 @@ export function LinkOptionsContainer(props) {
                   "'height='None'width='None'></iframe>"}
             </p>
             <div
-              className="_display--inline-block _margin-left--10px _cursor--pointer _border-left--1px_solid_var_--gray-500_ _padding--10px _border-top-right-radius--4px _border-bottom-right-radius--4px _background-color--var_--gray-150_"
+              className="_display--inline-block _margin-left--10px _cursor--pointer _border-left--1px_solid_var_gray-500_ _padding--10px _border-top-right-radius--4px _border-bottom-right-radius--4px _background-color--var_gray-150_"
               onClick={copyLink}
             >
               <i ref={copyIconRef} className="fa-solid fa-copy"></i>

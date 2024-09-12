@@ -88,8 +88,8 @@ export function DragGifDiv(props) {
             draggedOver === "valid" || fileDropped
               ? "fileUploadInputDiv fileUploadInputDiv_draggedOverValid"
               : draggedOver === "invalid"
-              ? "fileUploadInputDiv fileUploadInputDiv_draggedOverInvalid"
-              : "fileUploadInputDiv"
+                ? "fileUploadInputDiv fileUploadInputDiv_draggedOverInvalid"
+                : "fileUploadInputDiv"
           }
           onDrop={(e) => handleDrop(e)}
           onDragOver={(e) => handleDragOver(e)}
@@ -99,7 +99,7 @@ export function DragGifDiv(props) {
           onMouseLeave={() => setMouseEntered(false)}
         >
           {fileDropped ? (
-            <i className="fa-regular fa-circle-check _color--var_--green-100_ _font-size--1rem"></i>
+            <i className="fa-regular fa-circle-check _color--var_green-100_ _font-size--1rem"></i>
           ) : (
             <div className="_pointer-events--none  _margin-top--3rem">
               <p className="_text-align--center">
@@ -151,8 +151,8 @@ export function DragGifDiv(props) {
                   validationErrorFileType == "invalid"
                     ? "invalidFileLi"
                     : validationErrorFileType == "valid"
-                    ? "validFileLi"
-                    : ""
+                      ? "validFileLi"
+                      : ""
                 }
               >
                 File type must be .gif

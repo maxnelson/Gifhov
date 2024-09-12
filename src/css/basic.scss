@@ -21,7 +21,8 @@
 @font-face {
   font-family: "couturebold";
   src: url("@/fonts/couture-webfont.eot");
-  src: url("@/fonts/couture-webfont.eot?#iefix") format("embedded-opentype"),
+  src:
+    url("@/fonts/couture-webfont.eot?#iefix") format("embedded-opentype"),
     url("@/fonts/couture-webfont.woff") format("woff"),
     url("@/fonts/couture-webfont.ttf") format("truetype"),
     url("@/fonts/couture-webfont.svg#couturebold") format("svg");
@@ -119,7 +120,11 @@ table {
 .header_logo_container {
   color: var(--light-blue-100);
   text-shadow: -1px 1px var(--blue-100);
-  font-family: "Century Gothic", Century Gothic, "couturebold", Helvetica;
+  font-family:
+    "Century Gothic",
+    Century Gothic,
+    "couturebold",
+    Helvetica;
   cursor: pointer;
   &:hover {
     color: white;
@@ -127,11 +132,19 @@ table {
 }
 .logo-part-1 {
   font-size: 32px;
-  font-family: "Century Gothic", Century Gothic, "couturebold", Helvetica;
+  font-family:
+    "Century Gothic",
+    Century Gothic,
+    "couturebold",
+    Helvetica;
 }
 .logo-part-2 {
   font-size: 32px;
-  font-family: "Century Gothic", Century Gothic, "couturebold", Helvetica;
+  font-family:
+    "Century Gothic",
+    Century Gothic,
+    "couturebold",
+    Helvetica;
 }
 
 .header_buttons_container {
@@ -231,7 +244,7 @@ audio {
   bottom: 0.6rem;
 }
 
-._color--var_--green-100_ {
+._color--var_green-100_ {
   color: var(--green-100);
 }
 
@@ -248,7 +261,9 @@ audio {
   font-size: 14px;
   visibility: hidden;
   &.show {
-    transition: opacity 1s ease, transform 2s ease;
+    transition:
+      opacity 1s ease,
+      transform 2s ease;
     visibility: visible;
     opacity: 1;
     transform: translateY(-30px);
