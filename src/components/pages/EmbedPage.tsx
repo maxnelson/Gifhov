@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchGifhov } from "@/utility_functions/database_operations/gifhovs/fetchGifhov";
 import { DocumentData } from "firebase/firestore";
 
-export function EmbedPage() {
+export function EmbedPage(props) {
   const { ownerID, gifhovID } = useParams<{
     ownerID: string;
     gifhovID: string;

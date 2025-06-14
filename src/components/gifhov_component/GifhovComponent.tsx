@@ -6,7 +6,10 @@ export function GifhovComponent(props: GifhovComponentPropsType) {
   const gifElement = useRef<HTMLImageElement>(null);
   const audioElement = useRef<HTMLAudioElement>(null);
   const mouseOverHandler = () => {
-    audioElement.current?.play();
+    if (audioElement.current) {
+      audioElement.current.loop = true;
+      audioElement.current?.play();
+    }
   };
 
   const mouseOutHandler = () => {

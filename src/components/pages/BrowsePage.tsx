@@ -7,14 +7,11 @@ import { VolumeEnabledIcon } from "@/components/page_components/VolumeEnabledIco
 import { DocumentData } from "firebase/firestore";
 import { GifhovComponentObjectType } from "@/utility_functions/typescript/types";
 
-export function BrowsePage() {
+export function BrowsePage(props) {
   const [gifhovObject, setGifhovObject] = useState<DocumentData | undefined>(
     undefined
   );
-  const [audioEnabled, setAudioEnabled] = useState(false);
-  document.onmousedown = () => {
-    setAudioEnabled(true);
-  };
+
   useEffect(() => {
     const fetchGifhovObject = async () => {
       const gifhovObjectDocument = await fetchAllGifhovs("anonymousGuest");
@@ -27,7 +24,7 @@ export function BrowsePage() {
     <>
       <Header />
       <div className="">
-        <VolumeEnabledIcon audioEnabled={audioEnabled} />
+        <VolumeEnabledIcon audioEnabled={props.audioEnabled} />
         {gifhovObject && (
           <div className="_display--flex _flex-direction--column _align-items--center">
             {gifhovObject.map((gifhov: GifhovComponentObjectType) => (

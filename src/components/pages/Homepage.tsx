@@ -7,14 +7,10 @@ import { Footer } from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { DocumentData } from "firebase/firestore";
 
-export function Homepage() {
+export function Homepage(props) {
   const [gifhovObject, setGifhovObject] = useState<DocumentData | undefined>(
     undefined
   );
-  const [audioEnabled, setAudioEnabled] = useState(false);
-  document.onmousedown = () => {
-    setAudioEnabled(true);
-  };
 
   useEffect(() => {
     const fetchGifhovObject = async () => {
@@ -32,7 +28,7 @@ export function Homepage() {
       <div>
         <Header />
         <div className="_width--90percent _margin--0_auto">
-          <VolumeEnabledIcon audioEnabled={audioEnabled} />
+          <VolumeEnabledIcon audioEnabled={props.audioEnabled} />
           {gifhovObject && (
             <GifhovFileUploaderContainer
               ownerID="anonymousGuest"
@@ -41,7 +37,7 @@ export function Homepage() {
               audioURL={gifhovObject.audioURL}
             />
           )}
-          <ClickDisclaimer audioEnabled={audioEnabled} />
+          <ClickDisclaimer audioEnabled={props.audioEnabled} />
         </div>
         <Footer />
       </div>
